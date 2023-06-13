@@ -8,14 +8,14 @@
     file: app_presetup.yml
 
 - name: Install Application Dependencies
-  ansible.builtin.yum:
-    name:
-      - go mod init dispatch
-      - go get
-      - go build
-    args:
-      chdir: /app
+  ansible.builtin.shell: go mod init {{ component }} ; go get ; go build
+  args:
+    chdir: /app
 
 - name: Systemd Setup
   ansible.builtin.import_tasks:
     file: systemd_setup.yml
+
+
+
+

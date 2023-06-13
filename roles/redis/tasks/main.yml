@@ -14,12 +14,13 @@
 
 - name: Update MongoDB Listen Address
   ansible.builtin.replace:
-    loop:
-      path:
-        - /etc/redis.conf
-        - /etc/redis/redis.conf
-      regexp: '127.0.0.1'
-      replace: '0.0.0.0'
+    path:
+      - /etc/redis/redis.conf
+      - /etc/redis.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+
+
 
 - name: Start Redis Service
   ansible.builtin.systemd:

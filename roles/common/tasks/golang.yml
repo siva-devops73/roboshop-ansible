@@ -10,10 +10,11 @@
 - name: Install Application Dependencies
   ansible.builtin.yum:
     name:
-      - go mod init
+      - go mod init dispatch
       - go get
       - go build
-    state: installed
+    args:
+      chdir: /app
 
 - name: Systemd Setup
   ansible.builtin.import_tasks:

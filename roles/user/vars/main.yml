@@ -1,1 +1,3 @@
 component: user
+
+load_schema: true

@@ -28,12 +28,8 @@ scrape_configs:
     ec2_sd_configs:
       - region: us-east-1
         port: 9100
-        name:
-          - company_name
-          - buisness
-          - project_name
         filters:
-          - name: "tag:Monitor"
+          - name: [ "tag:Monitor", "tag:company_name", "tag:buisness", "tag:project_name" ]
             values: [ "true" ]
 
 

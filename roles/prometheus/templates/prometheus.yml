@@ -29,8 +29,9 @@ scrape_configs:
       - region: us-east-1
         port: 9100
         filters:
-          - name: [ "tag:Monitor", "tag:company_name", "tag:buisness", "tag:project_name" ]
+          - name: "tag:Monitor"
             values: [ "true" ]
+          - name: ["tag:company_name"]
 
 
 

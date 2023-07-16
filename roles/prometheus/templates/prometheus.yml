@@ -31,9 +31,6 @@ scrape_configs:
         filters:
           - name: "tag:Monitor"
             values: [ "true" ]
-          - name: ["tag:company_name"]
-
-
 
     relabel_configs:
       - source_labels: [ __meta_ec2_tag_Name ]

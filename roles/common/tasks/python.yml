@@ -11,11 +11,10 @@
   ansible.builtin.import_tasks:
     file: app_presetup.yml
 
-# This step goes with CI
-#- name: Install Application Dependencies
-#  ansible.builtin.shell: pip3.6 install -r requirements.txt
-#  args:
-#    chdir: /app
+- name: Install Application Dependencies
+  ansible.builtin.shell: pip3.6 install -r requirements.txt
+  args:
+    chdir: /app
 
 - name: Systemd Setup
   ansible.builtin.import_tasks:

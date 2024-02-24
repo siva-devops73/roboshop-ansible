@@ -1,4 +1,4 @@
 component: catalogue
-app_version: 1.0.0
-
 load_schema: true
+app_version: 1.0.1
+
